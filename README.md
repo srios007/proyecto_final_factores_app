@@ -1,16 +1,29 @@
-# proyecto_final_factores_app
+# Aplicación para la venta de artículos de computador versión móvil
 
-A new Flutter project.
+* Julián Andrés Sánchez Rivera - 201810200
+* Santiago Ríos Valero - 20181020017
 
-## Getting Started
+Aplicación móvil en la cual el cliente puede visualizar lo sporoductos que están a laventaq en el app y poder hacer pruebas de compatibilidad entre las partes que está comprando. Para el desarrollo, se utilizaron las siguientes herramientas:
 
-This project is a starting point for a Flutter application.
+* Flutter
+* Dart
+* Firebase
 
-A few resources to get you started if this is your first Flutter project:
+### Instalacióm
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Primero, se clona el siguiente repositorio:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+git clone https://github.com/srios007/proyecto_final_factores_app.git
+```
+
+Segundo, descargar los paquetes: 
+
+```
+flutter pub get
+```
+Tercero, correr la aplicación:
+
+```
+flutter run
+```
