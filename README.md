@@ -1,7 +1,8 @@
 # Aplicación para la venta de artículos de computador versión móvil
 
-* Julián Andrés Sánchez Rivera - 201810200
+* Juan Sebastián González Forero - 20181020029
 * Santiago Ríos Valero - 20181020017
+* Marcela del Pilar Porras Queedo - 20191020
 
 Aplicación móvil en la cual el cliente puede visualizar lo sporoductos que están a laventaq en el app y poder hacer pruebas de compatibilidad entre las partes que está comprando. Para el desarrollo, se utilizaron las siguientes herramientas:
 
