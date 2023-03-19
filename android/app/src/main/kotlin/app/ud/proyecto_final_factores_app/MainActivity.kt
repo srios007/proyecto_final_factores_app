@@ -1,0 +1,6 @@
+package app.ud.proyecto_final_factores_app
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
