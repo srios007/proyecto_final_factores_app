@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:proyecto_final_factores_app/app/routes/app_pages.dart';
+import 'package:proyecto_final_factores_app/app/services/services.dart';
 import 'package:proyecto_final_factores_app/app/utils/palette.dart';
 import 'package:proyecto_final_factores_app/firebase_options.dart';
 
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: const [Locale('es', '')],
       useInheritedMediaQuery: true,
       title: 'Application',
-      initialRoute: AppPages.INITIAL,
+      initialRoute: _setInitialRoute(),
       getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -44,5 +45,14 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _setInitialRoute() {
+    final firebaseUser = auth.getCurrentUser();
+    if (firebaseUser != null) {
+      return Routes.HOME;
+    } else {
+      return Routes.REGISTER;
+    }
   }
 }
