@@ -138,17 +138,17 @@ class RegisterController extends GetxController {
 
   /// Guarda el usuario en firebase
   saveUserInFirebase() async {
-    // final result = await userService.save(
-    //   user: user,
-    //   customId: signUpResult.user.uid,
-    // );
-    // if (result) {
-    Get.offAllNamed(Routes.HOME);
-    // } else {
-    //   CutomSnackBars.showErrorSnackBar(
-    //     'Error al crear el usuario, por favor intenta de nuevo',
-    //   );
-    // }
+    final result = await userService.save(
+      user: user,
+      customId: signUpResult.user.uid,
+    );
+    if (result) {
+      Get.offAllNamed(Routes.HOME, arguments: {'user': user});
+    } else {
+      CutomSnackBars.showErrorSnackBar(
+        'Error al crear el usuario, por favor intenta de nuevo',
+      );
+    }
   }
 
   /// Registra al usuario

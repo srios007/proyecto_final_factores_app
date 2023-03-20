@@ -6,14 +6,13 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:proyecto_final_factores_app/app/routes/app_pages.dart';
 import 'package:proyecto_final_factores_app/app/utils/palette.dart';
-// import 'package:proyecto_final_factores_app/firebase_options.dart';
-// import 'package:sentry_flutter/sentry_flutter.dart';
+import 'package:proyecto_final_factores_app/firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await GetStorage.init();
-  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   runApp(MyApp());
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "458113215854",
+    "project_id": "proyecto-final-factores",
+    "storage_bucket": "proyecto-final-factores.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458113215854:android:5d6739031e662aa5cb257f",
+        "android_client_info": {
+          "package_name": "app.ud.proyecto_final_factores_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458113215854-652lef7ioas6lbn24uqm4tnjl1615d7i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy9RLYdeG4VOt23RoemO2EHSMd3Vsc_2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "458113215854-652lef7ioas6lbn24uqm4tnjl1615d7i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
