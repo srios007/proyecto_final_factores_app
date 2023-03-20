@@ -693,6 +693,9 @@ PODS:
     - Mantle
     - SDWebImage
     - SDWebImageWebPCoder
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - GoogleDataTransport (9.2.1):
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (< 2.30910.0, >= 2.30908.0)
@@ -805,6 +808,9 @@ PODS:
   - SDWebImageWebPCoder (0.10.1):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.15)
+  - sqflite (0.0.2):
+    - Flutter
+    - FMDB (>= 2.7.5)
   - url_launcher_ios (0.0.1):
     - Flutter
 
@@ -820,6 +826,7 @@ DEPENDENCIES:
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+  - sqflite (from `.symlinks/plugins/sqflite/ios`)
   - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
 
 SPEC REPOS:
@@ -837,6 +844,7 @@ SPEC REPOS:
     - FirebaseInstallations
     - FirebaseMessaging
     - FirebaseStorage
+    - FMDB
     - GoogleDataTransport
     - GoogleUtilities
     - "gRPC-C++"
@@ -875,6 +883,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/path_provider_foundation/ios"
   permission_handler_apple:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
+  sqflite:
+    :path: ".symlinks/plugins/sqflite/ios"
   url_launcher_ios:
     :path: ".symlinks/plugins/url_launcher_ios/ios"
 
@@ -900,6 +910,7 @@ SPEC CHECKSUMS:
   FirebaseStorage: 10d4f43a4ef98e7554da72197ad52216686ea990
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   flutter_image_compress: 5a5e9aee05b6553048b8df1c3bc456d0afaac433
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GoogleDataTransport: ea169759df570f4e37bdee1623ec32a7e64e67c4
   GoogleUtilities: c2bdc4cf2ce786c4d2e6b3bcfd599a25ca78f06f
   "gRPC-C++": 9675f953ace2b3de7c506039d77be1f2e77a8db2
@@ -917,6 +928,7 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
   SDWebImageWebPCoder: 4851414d9f8894e328e8b97c93ea4f4f4e4418ae
+  sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
   url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
 
 PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3

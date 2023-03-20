@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
     if (firebaseUser != null) {
       return Routes.HOME;
     } else {
-      return Routes.REGISTER;
+      return Routes.LOGIN;
     }
   }
 }

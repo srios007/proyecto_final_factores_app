@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 ///
 
 class AppConstants {
-  final numberFormat = NumberFormat.currency(symbol: '\$', decimalDigits: 0);
+  final numberFormat = NumberFormat.currency(symbol: '\$', decimalDigits: 0, locale: 'eu');
 
   // WOMPI
   bool wompiIsSandbox = false;

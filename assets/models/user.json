@@ -1,0 +1,45 @@
+{
+    "created": "2018-12-10T13:49:51.141Z",
+    "description": "",
+    "profilePictureUrl": "",
+    "contactInfo": {
+        "name": "",
+        "lastName": "",
+        "email": "",
+        "document": {
+            "documentId": "",
+            "typeId": ""
+        },
+        "phoneNumber": {
+            "basePhoneNumber": "",
+            "countryCode": ""
+        }
+    },
+    "userStatus": {
+        "isActive": true,
+        "isApproved": true,
+        "isBanned": true,
+        "isRejected": true
+    },
+    "clientRating": 1.1,
+    "lizerRating": 1.1,
+    "country": "",
+    "city": "",
+    "role": "",
+    "userType": "",
+    "pushNotificationsToken": "",
+    "interests": {
+        "category1": "",
+        "category2": "",
+        "category3": ""
+    },
+    "extraConfig": {
+        "hasOwnTerms": true,
+        "ownTermsUrl": "",
+        "contact": {
+            "type": "",
+            "startHour": "",
+            "endHour": ""
+        }
+    }
+}

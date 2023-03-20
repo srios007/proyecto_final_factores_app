@@ -18,29 +18,26 @@ class DrawerHome extends StatelessWidget {
       backgroundColor: Colors.white,
       child: Column(
         children: [
-          SizedBox(
-            width: Get.width,
-            child: DrawerHeader(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-              ),
-              child: Column(
-                children: [
-                  Image.asset(
-                    imageReferences.logo,
-                    height: 80,
+          DrawerHeader(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+            ),
+            child: Column(
+              children: [
+                Image.asset(
+                  imageReferences.logo,
+                  height: 80,
+                ),
+                const SizedBox(height: 15),
+                const Text(
+                  'Marketplace',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 24,
+                    color: Palette.darkGreen,
                   ),
-                  const SizedBox(height: 15),
-                  const Text(
-                    'Marketplace',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 24,
-                      color: Palette.darkGreen,
-                    ),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
           ),
           ItemMenu(
