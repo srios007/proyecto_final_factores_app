@@ -72,13 +72,13 @@ class RegisterController extends GetxController {
         }
       } catch (e) {
         print(e);
-        CutomSnackBars.showErrorSnackBar(
+        CustomSnackBars.showErrorSnackBar(
           'Hubo un error al cargar tu foto de perfil',
         );
         isLoadingPP.value = false;
       }
     } else {
-      CutomSnackBars.showErrorSnackBar(
+      CustomSnackBars.showErrorSnackBar(
         'Por favor, activa los permisos desde la configuración de tu celular '
         'para poder acceder a los archivos que necesites y tomar fotos',
       );
@@ -107,16 +107,16 @@ class RegisterController extends GetxController {
   validateAndSignUp() async {
     switch (signUpResult) {
       case 'There is an account already registered with this email.':
-        CutomSnackBars.showErrorSnackBar(
+        CustomSnackBars.showErrorSnackBar(
             'Ya existe un usuario con este correo.');
         isLoading.value = false;
         break;
       case 'Your email address appears to be malformed.':
-        CutomSnackBars.showErrorSnackBar('Tu correo está mal escrito');
+        CustomSnackBars.showErrorSnackBar('Tu correo está mal escrito');
         break;
     }
     if (signUpResult is String) {
-      CutomSnackBars.showErrorSnackBar(signUpResult);
+      CustomSnackBars.showErrorSnackBar(signUpResult);
       isLoading.value = false;
       return;
     }
@@ -145,7 +145,7 @@ class RegisterController extends GetxController {
     if (result) {
       Get.offAllNamed(Routes.HOME);
     } else {
-      CutomSnackBars.showErrorSnackBar(
+      CustomSnackBars.showErrorSnackBar(
         'Error al crear el usuario, por favor intenta de nuevo',
       );
     }
@@ -154,7 +154,7 @@ class RegisterController extends GetxController {
   /// Registra al usuario
   register() async {
     if (!terms.value) {
-      CutomSnackBars.showErrorSnackBar(
+      CustomSnackBars.showErrorSnackBar(
         'Por favor, acepta los términos y condiciones y políticas de privacidad',
       );
     } else if (key.currentState!.validate()) {
@@ -169,7 +169,7 @@ class RegisterController extends GetxController {
       } catch (e) {
         print(e.toString());
         await auth.deleteUser();
-        CutomSnackBars.showErrorSnackBar(
+        CustomSnackBars.showErrorSnackBar(
           'Error al crear el usuario, por favor intenta de nuevo',
         );
         isLoading.value = false;

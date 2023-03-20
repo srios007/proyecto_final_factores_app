@@ -1,0 +1,8 @@
+{
+    "cardNumber": "STRING",
+    "expiryDate": "STRING",
+    "cardHolderName": "STRING",
+    "cvvCode": ""
+}
+ 
+  

@@ -4,7 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:proyecto_final_factores_app/app/services/model_services/user_service.dart';
 import 'package:proyecto_final_factores_app/app/widgets/widgets.dart';
-import 'package:proyecto_final_factores_app/app/models/user_model.dart' as user_model;
+import 'package:proyecto_final_factores_app/app/models/user_model.dart'
+    as user_model;
 
 import '../../utils/utils.dart';
 import 'database_service.dart';
@@ -167,13 +168,13 @@ class AuthService {
 
         switch (error.code) {
           case 'requires-recent-login':
-            CutomSnackBars.showErrorSnackBar(
+            CustomSnackBars.showErrorSnackBar(
               'Por favor, vuelve a iniciar sesión para poder eliminar tu cuenta.',
             );
             return false;
 
           default:
-            CutomSnackBars.showErrorSnackBar(
+            CustomSnackBars.showErrorSnackBar(
               'Hubo un error al eliminar tu usuario, por favor intenta más tarde.',
             );
             return false;

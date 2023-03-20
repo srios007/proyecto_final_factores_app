@@ -1,4 +1,9 @@
 class Product {
+  String? description;
+  String? imageUrl;
+  String? name;
+  int? price;
+
   Product({
     this.description,
     this.imageUrl,
@@ -12,11 +17,6 @@ class Product {
     name = json['name'];
     price = json['price'];
   }
-
-  String? description;
-  String? imageUrl;
-  String? name;
-  int? price;
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};

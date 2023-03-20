@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:proyecto_final_factores_app/app/utils/palette.dart';
 
-class CutomSnackBars {
+class CustomSnackBars {
   static showSuccessSnackBar(String message) => Get.showSnackbar(
         GetSnackBar(
           title: '¡Listo!',
@@ -17,7 +17,7 @@ class CutomSnackBars {
           duration: const Duration(seconds: 3),
         ),
       );
-    static showNotificationSnackBar(String message) => Get.showSnackbar(
+  static showNotificationSnackBar(String message) => Get.showSnackbar(
         GetSnackBar(
           message: message,
           duration: const Duration(seconds: 3),

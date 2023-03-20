@@ -36,8 +36,6 @@ linter:
     - sized_box_for_whitespace
     - slash_for_doc_comments
     - sort_child_properties_last
-    - sort_constructors_first
-    - sort_unnamed_constructors_first
     - unnecessary_brace_in_string_interps
     - unnecessary_constructor_name
     - unnecessary_getters_setters

@@ -27,8 +27,24 @@ class HomeView extends GetView<HomeController> {
         bottom: true,
         child: CustomScrollView(
           slivers: [
+            titleSection(),
             productsSection(),
           ],
+        ),
+      ),
+    );
+  }
+
+  titleSection() {
+    return const SliverToBoxAdapter(
+      child: Padding(
+        padding: EdgeInsets.all(20),
+        child: Text(
+          'Productos',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+          ),
         ),
       ),
     );
@@ -50,8 +66,9 @@ class HomeView extends GetView<HomeController> {
       sliver: SliverGrid(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1.9,
-          crossAxisSpacing: 4.5,
+          childAspectRatio: 0.7,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
         ),
         delegate: SliverChildBuilderDelegate(
           childCount: controller.products.length,
@@ -78,32 +95,46 @@ class HomeView extends GetView<HomeController> {
           ),
         ],
       ),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: CachedNetworkImage(
-              filterQuality: FilterQuality.none,
-              imageUrl: product.imageUrl!,
-              width: Get.width,
-              height: 50,
-              fit: BoxFit.cover,
-              progressIndicatorBuilder: (context, url, downloadProgress) =>
-                  Padding(
-                padding: const EdgeInsets.all(20),
-                child: Center(
-                  child: LoadingAnimationWidget.twistingDots(
-                    leftDotColor: Palette.darkGreen,
-                    rightDotColor: Palette.green,
-                    size: 20,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: CachedNetworkImage(
+                filterQuality: FilterQuality.none,
+                imageUrl: product.imageUrl!,
+                width: Get.width,
+                height: 150,
+                fit: BoxFit.contain,
+                progressIndicatorBuilder: (context, url, downloadProgress) =>
+                    Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Center(
+                    child: LoadingAnimationWidget.twistingDots(
+                      leftDotColor: Palette.darkGreen,
+                      rightDotColor: Palette.green,
+                      size: 20,
+                    ),
                   ),
                 ),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
-              errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
-          ),
-          Text(product.name!),
-        ],
+            const Spacer(flex: 2),
+            Text(
+              product.name!,
+              textAlign: TextAlign.start,
+            ),
+            const Spacer(),
+            Text(
+              constants.numberFormat.format(product.price),
+              textAlign: TextAlign.start,
+            ),
+            const Spacer(),
+          ],
+        ),
       ),
     );
   }

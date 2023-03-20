@@ -1,4 +1,11 @@
 class User {
+  String? id;
+  DateTime? created;
+  String? enail;
+  String? profilePictureUrl;
+  String? name;
+  String? lastname;
+
   User({
     this.id,
     this.created,
@@ -15,13 +22,6 @@ class User {
     name = json['name'];
     lastname = json['lastname'];
   }
-
-  String? id;
-  DateTime? created;
-  String? enail;
-  String? profilePictureUrl;
-  String? name;
-  String? lastname;
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};

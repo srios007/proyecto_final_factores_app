@@ -9,7 +9,6 @@ import 'package:googleapis_auth/auth_io.dart';
 import 'package:http/http.dart' as http;
 import 'package:proyecto_final_factores_app/app/widgets/custom_snackbars.dart';
 
-
 class PushNotificationService {
   static FirebaseMessaging messaging = FirebaseMessaging.instance;
   static late final String? token;
@@ -23,7 +22,7 @@ class PushNotificationService {
       'https://www.googleapis.com/auth/firebase.messaging'
     ];
     final accountCredentials = ServiceAccountCredentials.fromJson({
-          'https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-mf2yx%40lizit-production-a28ef.iam.gserviceaccount.com'
+      'https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-mf2yx%40lizit-production-a28ef.iam.gserviceaccount.com'
     });
     final client = http.Client();
     final AccessCredentials credentials =
@@ -50,7 +49,7 @@ class PushNotificationService {
     debugPrint('======== ON Message ==========');
     debugPrint('Title: ${message.notification!.title}');
     debugPrint('Body: ${message.notification!.body}');
-    CutomSnackBars.showNotificationSnackBar('Tienes una nueva notificación');
+    CustomSnackBars.showNotificationSnackBar('Tienes una nueva notificación');
     final Map<String, dynamic> dataNotification = message.data;
     dataNotification.addAll({'isLocal': true});
     _messageStream.add(dataNotification);

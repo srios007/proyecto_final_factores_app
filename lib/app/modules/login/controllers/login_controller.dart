@@ -36,7 +36,7 @@ class LoginController extends GetxController {
           isLoading.value = false;
           Get.offAllNamed(Routes.HOME);
         } else {
-          CutomSnackBars.showErrorSnackBar(response);
+          CustomSnackBars.showErrorSnackBar(response);
           isLoading.value = false;
         }
       } catch (e) {
