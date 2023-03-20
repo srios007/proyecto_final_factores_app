@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:proyecto_final_factores_app/app/modules/home/controllers/home_controller.dart';
+import 'package:proyecto_final_factores_app/app/utils/utils.dart';
+import 'package:proyecto_final_factores_app/app/widgets/widgets.dart';
+
+class DrawerHome extends StatelessWidget {
+  const DrawerHome({
+    super.key,
+    required this.controller,
+  });
+
+  final HomeController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      backgroundColor: Colors.white,
+      child: Column(
+        children: [
+          SizedBox(
+            width: Get.width,
+            child: DrawerHeader(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+              ),
+              child: Column(
+                children: [
+                  Image.asset(
+                    imageReferences.logo,
+                    height: 80,
+                  ),
+                  const SizedBox(height: 15),
+                  const Text(
+                    'Marketplace',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 24,
+                      color: Palette.darkGreen,
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          ItemMenu(
+            iconData: Icons.person_2_outlined,
+            text: 'Perfil',
+            onTap: controller.goToProfile,
+          ),
+          ItemMenu(
+            iconData: Icons.payment_outlined,
+            text: 'Métodos de pago',
+            onTap: controller.goToPaymentsMethods,
+          ),
+          const Spacer(),
+          ItemMenu(
+            iconData: Icons.exit_to_app,
+            text: 'Cerrar Sesión',
+            onTap: controller.signOut,
+          ),
+          const SizedBox(height: 30),
+        ],
+      ),
+    );
+  }
+}

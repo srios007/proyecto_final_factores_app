@@ -143,7 +143,7 @@ class RegisterController extends GetxController {
       customId: signUpResult.user.uid,
     );
     if (result) {
-      Get.offAllNamed(Routes.HOME, arguments: {'user': user});
+      Get.offAllNamed(Routes.HOME);
     } else {
       CutomSnackBars.showErrorSnackBar(
         'Error al crear el usuario, por favor intenta de nuevo',

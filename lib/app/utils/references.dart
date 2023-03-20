@@ -8,7 +8,7 @@ FirebaseReferences firebaseReferences = FirebaseReferences();
 
 /// Esta clase contiene las referencias de imágenes
 class ImageReferences {
-  String marker = 'assets/images/marker.png';
+  String logo = 'assets/images/main_logo.png';
 
 }
 

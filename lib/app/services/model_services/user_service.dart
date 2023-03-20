@@ -77,6 +77,29 @@ class UserService {
       return false;
     }
   }
+
+  Future<User?> getCurrentUser() async {
+    final currentFirebaseUser = auth.getCurrentUser();
+    final user = await getUserDocumentById(
+      currentFirebaseUser!.uid,
+    );
+    return user;
+  }
+
+  Future<User?> getUserDocumentById(
+    String documentId,
+  ) async {
+    final querySnapshot = await database.getDocument(
+      collection: 'users',
+      documentId: documentId,
+    );
+
+    if (!querySnapshot.exists) return null;
+
+    return User.fromJson(
+      querySnapshot.data() as Map<String, dynamic>,
+    );
+  }
 }
 
 UserService userService = UserService();

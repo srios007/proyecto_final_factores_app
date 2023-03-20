@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:proyecto_final_factores_app/app/services/model_services/user_service.dart';
 import 'package:proyecto_final_factores_app/app/widgets/widgets.dart';
 import 'package:proyecto_final_factores_app/app/models/user_model.dart' as user_model;
 
@@ -217,16 +218,16 @@ class AuthService {
     }
   }
 
-  // Future<user_model.User?> getCurrentUserHome() async {
-  //   await connectionStatus.getNormalStatus();
+  Future<user_model.User?> getCurrentUserHome() async {
+    await connectionStatus.getNormalStatus();
 
-  //   try {
-  //     return (await userService.getCurrentUser())!;
-  //   } on FirebaseAuthException catch (e) {
-  //     debugPrint(e.toString());
-  //   }
-  //   return null;
-  // }
+    try {
+      return (await userService.getCurrentUser())!;
+    } on FirebaseAuthException catch (e) {
+      debugPrint(e.toString());
+    }
+    return null;
+  }
 }
 
 final AuthService auth = AuthService(FirebaseAuth.instance);

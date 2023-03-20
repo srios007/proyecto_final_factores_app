@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:proyecto_final_factores_app/app/routes/app_pages.dart';
+import 'package:proyecto_final_factores_app/app/services/services.dart';
+import 'package:proyecto_final_factores_app/app/widgets/widgets.dart';
 
 class LoginController extends GetxController {
   final TextEditingController emailController = TextEditingController();
@@ -23,9 +25,23 @@ class LoginController extends GetxController {
   forgotPass() {}
 
   /// Inicia sesión
-  login() {
+  login() async {
     if (key.currentState!.validate()) {
-      Get.offAllNamed(Routes.HOME);
+      isLoading.value = true;
+
+      try {
+        final response = await auth.signIn(
+            email: emailController.text.trim(), password: passController.text);
+        if (response is! String) {
+          isLoading.value = false;
+          Get.offAllNamed(Routes.HOME);
+        } else {
+          CutomSnackBars.showErrorSnackBar(response);
+          isLoading.value = false;
+        }
+      } catch (e) {
+        e.toString();
+      }
     }
   }
 }
