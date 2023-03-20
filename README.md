@@ -4,7 +4,7 @@
 * Santiago Ríos Valero - 20181020017
 * Marcela del Pilar Porras Queedo - 20191020
 
-Aplicación móvil en la cual el cliente puede visualizar lo sporoductos que están a laventaq en el app y poder hacer pruebas de compatibilidad entre las partes que está comprando. Para el desarrollo, se utilizaron las siguientes herramientas:
+Aplicación móvil en la cual el cliente puede visualizar los poroductos que están a laventa en el app y poder hacer pruebas de compatibilidad entre las partes que está comprando. Para el desarrollo, se utilizaron las siguientes herramientas:
 
 * Flutter
 * Dart
