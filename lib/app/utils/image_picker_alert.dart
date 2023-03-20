@@ -19,12 +19,18 @@ class ImagePickAlert {
           Itembutton(
             onPressed: fromPhoto,
             label: 'Tomar una foto     ',
-            icon: const Icon(Icons.camera_alt),
+            icon: const Icon(
+              Icons.camera_alt,
+              color: Palette.darkGreen,
+            ),
           ),
           Itembutton(
             onPressed: fromGallery,
             label: 'Desde galería      ',
-            icon: const Icon(Icons.photo_album),
+            icon: const Icon(
+              Icons.photo_album,
+              color: Palette.darkGreen,
+            ),
           ),
         ],
         cancelButton: CupertinoActionSheetAction(

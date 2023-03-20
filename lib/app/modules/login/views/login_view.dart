@@ -42,7 +42,7 @@ class LoginView extends GetView<LoginController> {
         'Marketplace UDesarrolladores',
         style: TextStyle(
           color: Palette.darkGreen,
-          fontSize: 42,
+          fontSize: 40,
           fontWeight: FontWeight.bold,
         ),
         textAlign: TextAlign.center,
@@ -73,7 +73,7 @@ class LoginView extends GetView<LoginController> {
             padding: const EdgeInsets.only(left: 30, top: 10),
             child: GestureDetector(
               onTap: controller.forgotPass,
-              child: Align(
+              child: const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Olvidé mi contraseña',
@@ -91,28 +91,31 @@ class LoginView extends GetView<LoginController> {
 
   /// Label de regístrate
   registerLabel() {
-    return GestureDetector(
-      onTap: controller.goToRegister,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            '¿No tienes una cuenta? ',
-            style: TextStyle(
-              color: Palette.darkGreen,
-              fontSize: 14,
-              fontWeight: FontWeight.w300,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: GestureDetector(
+        onTap: controller.goToRegister,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text(
+              '¿No tienes una cuenta? ',
+              style: TextStyle(
+                color: Palette.darkGreen,
+                fontSize: 14,
+                fontWeight: FontWeight.w300,
+              ),
             ),
-          ),
-          const Text(
-            'Regístrate',
-            style: TextStyle(
-              color: Palette.darkGreen,
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
+            Text(
+              'Regístrate',
+              style: TextStyle(
+                color: Palette.darkGreen,
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
