@@ -89,7 +89,7 @@ class AddCreditCardView extends GetView<AddCreditCardController> {
     return Align(
       alignment: Alignment.bottomCenter,
       child: CustomButton(
-        isLoading: false.obs,
+        isLoading: controller.isLoading,
         onPressed: controller.addCreditCard,
         buttonText: 'Agregar',
       ),

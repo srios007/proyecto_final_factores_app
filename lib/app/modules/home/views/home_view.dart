@@ -6,6 +6,7 @@ import 'package:proyecto_final_factores_app/app/models/models.dart';
 import 'package:proyecto_final_factores_app/app/modules/home/controllers/home_controller.dart';
 import 'package:proyecto_final_factores_app/app/modules/home/widgets/drawer_home.dart';
 import 'package:proyecto_final_factores_app/app/utils/utils.dart';
+import 'package:proyecto_final_factores_app/app/widgets/widgets.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
@@ -150,7 +151,7 @@ class HomeView extends GetView<HomeController> {
   loadingWidget() {
     return const SliverToBoxAdapter(
       child: Center(
-        child: CircularProgressIndicator(),
+        child: LoadingWidget(),
       ),
     );
   }

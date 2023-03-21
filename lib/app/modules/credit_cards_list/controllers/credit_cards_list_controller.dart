@@ -1,43 +1,31 @@
 import 'package:get/get.dart';
-import 'package:proyecto_final_factores_app/app/models/models.dart';
 import 'package:proyecto_final_factores_app/app/routes/app_pages.dart';
+import 'package:proyecto_final_factores_app/app/services/services.dart';
 
 class CreditCardsListController extends GetxController {
+  RxBool isLoading = false.obs;
   RxList cards = [].obs;
+  late String id;
 
   @override
-  void onInit() {
-    cards.add(
-      CreditCard(
-        cardNumber: '4093 5500 0055 5577',
-        cardHolderName: 'Santiago Rios',
-        expiryDate: '10/23',
-      ),
-    );
-    // cards.add(
-    //   CreditCard(
-    //     cardNumber: 'Edwin Hernández',
-    //     cardHolderName: '12',
-    //     expiryDate: 'UDOI',
-    //   ),
-    // );
-    // cards.add(
-    //   CreditCard(
-    //     cardNumber: 'Sebastián González',
-    //     cardHolderName: '23',
-    //     expiryDate: 'ISML',
-    //   ),
-    // );
+  void onInit() async {
+    id = Get.arguments['id'];
+    getCrditCards();
     super.onInit();
+  }
+
+  /// Trae las tarjetas de crédito del usuario
+  getCrditCards() async {
+    isLoading.value = true;
+    cards = await creditCardService.getUserCreditCards(
+      documentId: id,
+    );
+    isLoading.value = false;
   }
 
   /// Va a la pestaña de agregar tarjeta
   goToAddCard() async {
-    final result = await Get.toNamed(Routes.ADD_CREDIT_CARD);
-    if (result != null) {
-      cards.add(result);
-    }
+    await Get.toNamed(Routes.ADD_CREDIT_CARD, arguments: {'id': id});
+    getCrditCards();
   }
 }
-
- 

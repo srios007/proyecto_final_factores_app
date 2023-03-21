@@ -6,3 +6,4 @@ export 'inputs/email_input.dart';
 export 'inputs/normal_input.dart';
 export 'inputs/password_input.dart';
 export 'item_menu.dart';
+export 'loading_widget.dart';

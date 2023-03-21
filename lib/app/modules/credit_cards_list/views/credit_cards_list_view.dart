@@ -27,15 +27,21 @@ class CreditCardsListView extends GetView<CreditCardsListController> {
       body: CustomScrollView(
         slivers: [
           Obx(
-            () => SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  final child = controller.cards[index];
-                  return childrenCard(child, index);
-                },
-                childCount: controller.cards.length, // 1000 list items
-              ),
-            ),
+            () => controller.isLoading.value
+                ? const SliverToBoxAdapter(
+                    child: Center(
+                      child: LoadingWidget(),
+                    ),
+                  )
+                : SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (BuildContext context, int index) {
+                        final child = controller.cards[index];
+                        return childrenCard(child, index);
+                      },
+                      childCount: controller.cards.length, // 1000 list items
+                    ),
+                  ),
           ),
           const SliverToBoxAdapter()
         ],

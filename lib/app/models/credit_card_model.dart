@@ -1,10 +1,12 @@
 class CreditCard {
+  String? id;
   String? cardNumber;
   String? expiryDate;
   String? cardHolderName;
   String? cvvCode;
 
   CreditCard({
+    this.id,
     this.cardNumber,
     this.expiryDate,
     this.cardHolderName,
@@ -12,6 +14,7 @@ class CreditCard {
   });
 
   CreditCard.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
     cardNumber = json['cardNumber'];
     expiryDate = json['expiryDate'];
     cardHolderName = json['cardHolderName'];
@@ -20,6 +23,7 @@ class CreditCard {
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
+    data['id'] = id;
     data['cardNumber'] = cardNumber;
     data['expiryDate'] = expiryDate;
     data['cardHolderName'] = cardHolderName;

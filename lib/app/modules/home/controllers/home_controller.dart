@@ -35,6 +35,6 @@ class HomeController extends GetxController {
 
   /// Va a la pantalla de métodos de pago
   goToPaymentsMethods() {
-    Get.toNamed(Routes.CREDIT_CARDS_LIST);
+    Get.toNamed(Routes.CREDIT_CARDS_LIST, arguments: {'id': user.id});
   }
 }

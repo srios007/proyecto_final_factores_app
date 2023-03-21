@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_credit_card/credit_card_model.dart';
 import 'package:get/get.dart';
 import 'package:proyecto_final_factores_app/app/models/models.dart';
+import 'package:proyecto_final_factores_app/app/services/services.dart';
 import 'package:proyecto_final_factores_app/app/widgets/widgets.dart';
 
 class AddCreditCardController extends GetxController {
@@ -11,16 +12,35 @@ class AddCreditCardController extends GetxController {
   RxString cvvCodeController = ''.obs;
   final key = GlobalKey<FormState>();
   RxBool isCvvFocused = false.obs;
+  RxBool isLoading = false.obs;
   CreditCard card = CreditCard();
 
   /// Agrega la tarjeta de crédito
-  addCreditCard() {
+  addCreditCard() async {
     if (key.currentState!.validate() && validteFields()) {
       card.cardNumber = cardNumberController.value;
       card.expiryDate = expiryDateController.value;
       card.cardHolderName = cardHolderNameController.value;
       card.cvvCode = cvvCodeController.value;
-      Get.back(result: card);
+      isLoading.value = true;
+      final result = await creditCardService.addCreditCard(
+        documentId: Get.arguments['id'],
+        creditCard: card,
+      );
+      validateResult(result);
+      isLoading.value = false;
+    }
+  }
+
+  /// Valida si la tarjeta se agregó
+  validateResult(bool result) {
+    if (result) {
+      Get.back();
+      CustomSnackBars.showSuccessSnackBar('Tarjeta creada con éxito');
+    } else {
+      CustomSnackBars.showErrorSnackBar(
+        'Error al crear la tarjeta, por favor intente de nuevo',
+      );
     }
   }
 

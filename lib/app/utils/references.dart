@@ -2,6 +2,8 @@ class FirebaseReferences {
 // Firebase
   String users = 'users';
   String products = 'products';
+  String creditCards = 'creditCards';
+
 
 }
 
