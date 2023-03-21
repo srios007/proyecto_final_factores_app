@@ -8,8 +8,8 @@ abstract class Routes {
   static const REGISTER = _Paths.REGISTER;
   static const PROFILE = _Paths.PROFILE;
   static const CREDIT_CARDS_LIST = _Paths.CREDIT_CARDS_LIST;
-  static const MY_SHOPPING = _Paths.MY_SHOPPING;
   static const ADD_CREDIT_CARD = _Paths.ADD_CREDIT_CARD;
+  static const PRODUCT_DETAIL = _Paths.PRODUCT_DETAIL;
 }
 
 abstract class _Paths {
@@ -19,6 +19,6 @@ abstract class _Paths {
   static const REGISTER = '/register';
   static const PROFILE = '/profile';
   static const CREDIT_CARDS_LIST = '/credit-cards-list';
-  static const MY_SHOPPING = '/my-shopping';
   static const ADD_CREDIT_CARD = '/add-credit-card';
+  static const PRODUCT_DETAIL = '/product-detail';
 }

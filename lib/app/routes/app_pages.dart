@@ -8,8 +8,8 @@ import 'package:proyecto_final_factores_app/app/modules/home/bindings/home_bindi
 import 'package:proyecto_final_factores_app/app/modules/home/views/home_view.dart';
 import 'package:proyecto_final_factores_app/app/modules/login/bindings/login_binding.dart';
 import 'package:proyecto_final_factores_app/app/modules/login/views/login_view.dart';
-import 'package:proyecto_final_factores_app/app/modules/my_shopping/bindings/my_shopping_binding.dart';
-import 'package:proyecto_final_factores_app/app/modules/my_shopping/views/my_shopping_view.dart';
+import 'package:proyecto_final_factores_app/app/modules/product_detail/bindings/product_detail_binding.dart';
+import 'package:proyecto_final_factores_app/app/modules/product_detail/views/product_detail_view.dart';
 import 'package:proyecto_final_factores_app/app/modules/profile/bindings/profile_binding.dart';
 import 'package:proyecto_final_factores_app/app/modules/profile/views/profile_view.dart';
 import 'package:proyecto_final_factores_app/app/modules/register/bindings/register_binding.dart';
@@ -45,21 +45,25 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => const ProfileView(),
       binding: ProfileBinding(),
+      transition: Transition.native,
     ),
     GetPage(
       name: _Paths.CREDIT_CARDS_LIST,
       page: () => const CreditCardsListView(),
       binding: CreditCardsListBinding(),
-    ),
-    GetPage(
-      name: _Paths.MY_SHOPPING,
-      page: () => const MyShoppingView(),
-      binding: MyShoppingBinding(),
+      transition: Transition.native,
     ),
     GetPage(
       name: _Paths.ADD_CREDIT_CARD,
       page: () => AddCreditCardView(),
       binding: AddCreditCardBinding(),
+      transition: Transition.native,
+    ),
+    GetPage(
+      name: _Paths.PRODUCT_DETAIL,
+      page: () => const ProductDetailView(),
+      binding: ProductDetailBinding(),
+      transition: Transition.native,
     ),
   ];
 }

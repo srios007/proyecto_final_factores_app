@@ -30,11 +30,21 @@ class HomeController extends GetxController {
 
   /// Va al perfil del cliente
   goToProfile() {
-    Get.toNamed(Routes.PROFILE);
+    Get.back();
+    Get.toNamed(Routes.PROFILE, arguments: {'user': user});
   }
 
   /// Va a la pantalla de métodos de pago
   goToPaymentsMethods() {
+    Get.back();
     Get.toNamed(Routes.CREDIT_CARDS_LIST, arguments: {'id': user.id});
+  }
+
+  /// Va a la pantalla de detalle del producto
+  goToProductDetail(Product product) {
+    Get.toNamed(Routes.PRODUCT_DETAIL, arguments: {
+      'product': product,
+      'id': user.id,
+    });
   }
 }

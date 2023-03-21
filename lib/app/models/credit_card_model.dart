@@ -1,9 +1,12 @@
+import 'package:get/get.dart';
+
 class CreditCard {
   String? id;
   String? cardNumber;
   String? expiryDate;
   String? cardHolderName;
   String? cvvCode;
+  RxBool? isSelected = false.obs;
 
   CreditCard({
     this.id,
@@ -11,6 +14,7 @@ class CreditCard {
     this.expiryDate,
     this.cardHolderName,
     this.cvvCode,
+    this.isSelected,
   });
 
   CreditCard.fromJson(Map<String, dynamic> json) {

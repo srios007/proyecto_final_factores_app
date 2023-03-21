@@ -43,7 +43,6 @@ class CreditCardsListView extends GetView<CreditCardsListController> {
                     ),
                   ),
           ),
-          const SliverToBoxAdapter()
         ],
       ),
     );
