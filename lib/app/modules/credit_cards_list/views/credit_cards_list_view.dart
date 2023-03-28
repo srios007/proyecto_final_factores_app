@@ -13,7 +13,7 @@ class CreditCardsListView extends GetView<CreditCardsListController> {
       appBar: AppBar(
         title: const Text(
           'Mis tarjetas',
-          style: TextStyle(color: Palette.darkGreen),
+          style: TextStyle(color: Palette.mainBlue),
         ),
         centerTitle: true,
       ),
@@ -50,7 +50,7 @@ class CreditCardsListView extends GetView<CreditCardsListController> {
 
   childrenCard(CreditCard child, int position) {
     const titleStyle = TextStyle(
-      color: Palette.darkGreen,
+      color: Palette.mainBlue,
       fontWeight: FontWeight.bold,
     );
     return Padding(

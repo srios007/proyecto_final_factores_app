@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
-          iconTheme: IconThemeData(color: Palette.darkGreen),
+          iconTheme: IconThemeData(color: Palette.mainBlue),
           elevation: 0,
         ),
       ),

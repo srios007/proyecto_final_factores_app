@@ -30,11 +30,11 @@ class DrawerHome extends StatelessWidget {
                 ),
                 const SizedBox(height: 15),
                 const Text(
-                  'Marketplace',
+                  'Techmart',
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 24,
-                    color: Palette.darkGreen,
+                    color: Palette.mainBlue,
                   ),
                 )
               ],

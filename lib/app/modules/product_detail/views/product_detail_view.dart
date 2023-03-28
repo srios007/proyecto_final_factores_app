@@ -16,7 +16,7 @@ class ProductDetailView extends GetView<ProductDetailController> {
         title: Text(
           controller.product.name!,
           style: const TextStyle(
-            color: Palette.darkGreen,
+            color: Palette.mainBlue,
             fontSize: 14,
           ),
         ),
@@ -106,7 +106,7 @@ class ProductDetailView extends GetView<ProductDetailController> {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: Palette.darkGreen,
+            color: Palette.mainBlue,
           ),
         ),
         const SizedBox(height: 10),
@@ -120,7 +120,7 @@ class ProductDetailView extends GetView<ProductDetailController> {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: Palette.darkGreen,
+            color: Palette.mainBlue,
           ),
         ),
       ],
@@ -138,7 +138,7 @@ class ProductDetailView extends GetView<ProductDetailController> {
         padding: const EdgeInsets.all(20),
         child: Center(
           child: LoadingAnimationWidget.twistingDots(
-            leftDotColor: Palette.darkGreen,
+            leftDotColor: Palette.mainBlue,
             rightDotColor: Palette.green,
             size: 20,
           ),
@@ -150,7 +150,7 @@ class ProductDetailView extends GetView<ProductDetailController> {
 
   childrenCard(CreditCard child, int position) {
     const titleStyle = TextStyle(
-      color: Palette.darkGreen,
+      color: Palette.mainBlue,
       fontWeight: FontWeight.bold,
     );
     return Obx(() => GestureDetector(
@@ -168,7 +168,7 @@ class ProductDetailView extends GetView<ProductDetailController> {
                 color: Colors.white,
                 border: Border.all(
                   color: child.isSelected!.value
-                      ? Palette.darkGreen
+                      ? Palette.mainBlue
                       : Colors.transparent,
                 ),
                 boxShadow: [

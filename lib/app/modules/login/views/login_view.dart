@@ -39,9 +39,9 @@ class LoginView extends GetView<LoginController> {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 30),
       child: Text(
-        'Marketplace UDesarrolladores',
+        'Techmart',
         style: TextStyle(
-          color: Palette.darkGreen,
+          color: Palette.mainBlue,
           fontSize: 40,
           fontWeight: FontWeight.bold,
         ),
@@ -78,7 +78,7 @@ class LoginView extends GetView<LoginController> {
                 child: Text(
                   'Olvidé mi contraseña',
                   style: TextStyle(
-                    color: Palette.darkGreen,
+                    color: Palette.mainBlue,
                   ),
                 ),
               ),
@@ -101,7 +101,7 @@ class LoginView extends GetView<LoginController> {
             Text(
               '¿No tienes una cuenta? ',
               style: TextStyle(
-                color: Palette.darkGreen,
+                color: Palette.mainBlue,
                 fontSize: 14,
                 fontWeight: FontWeight.w300,
               ),
@@ -109,7 +109,7 @@ class LoginView extends GetView<LoginController> {
             Text(
               'Regístrate',
               style: TextStyle(
-                color: Palette.darkGreen,
+                color: Palette.mainBlue,
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
               ),

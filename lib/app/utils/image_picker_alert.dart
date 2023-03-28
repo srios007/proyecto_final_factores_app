@@ -21,7 +21,7 @@ class ImagePickAlert {
             label: 'Tomar una foto     ',
             icon: const Icon(
               Icons.camera_alt,
-              color: Palette.darkGreen,
+              color: Palette.mainBlue,
             ),
           ),
           Itembutton(
@@ -29,7 +29,7 @@ class ImagePickAlert {
             label: 'Desde galería      ',
             icon: const Icon(
               Icons.photo_album,
-              color: Palette.darkGreen,
+              color: Palette.mainBlue,
             ),
           ),
         ],
@@ -38,7 +38,7 @@ class ImagePickAlert {
           child: const Text(
             'Cancelar',
             style: TextStyle(
-              color: Palette.darkGreen,
+              color: Palette.mainBlue,
               fontWeight: FontWeight.w700,
               fontSize: 16,
             ),

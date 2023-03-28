@@ -52,7 +52,7 @@ class PasswordInput extends StatelessWidget {
           Text(
             titleText,
             style: const TextStyle(
-              color: Palette.darkGreen,
+              color: Palette.mainBlue,
               fontSize: 16,
               fontWeight: FontWeight.w600,
             ),
@@ -80,9 +80,9 @@ class PasswordInput extends StatelessWidget {
                           onPressed: showPasswordAction,
                           icon: showPassword.value
                               ? const Icon(CupertinoIcons.eye,
-                                  color: Palette.darkGreen)
+                                  color: Palette.mainBlue)
                               : const Icon(CupertinoIcons.eye_slash,
-                                  color: Palette.darkGreen),
+                                  color: Palette.mainBlue),
                         )),
                     controller: textEditingController,
                     validator: validator ??

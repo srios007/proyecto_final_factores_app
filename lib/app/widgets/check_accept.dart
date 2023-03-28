@@ -40,7 +40,7 @@ class CheckAccept extends StatelessWidget {
               text: 'Acepto ',
               style: TextStyle(
                 fontSize: 12,
-                color: Palette.darkGreen.withOpacity(0.6),
+                color: Palette.mainBlue.withOpacity(0.6),
                 fontWeight: FontWeight.w300,
               ),
               children: [
@@ -48,7 +48,7 @@ class CheckAccept extends StatelessWidget {
                   text: label,
                   style: TextStyle(
                     fontSize: 12,
-                    color: Palette.darkGreen,
+                    color: Palette.mainBlue,
                     fontWeight: FontWeight.w500,
                   ),
                   recognizer: TapGestureRecognizer()..onTap = onTap,
@@ -57,7 +57,7 @@ class CheckAccept extends StatelessWidget {
                   text: ' y ',
                   style: TextStyle(
                     fontSize: 12,
-                    color: Palette.darkGreen.withOpacity(0.6),
+                    color: Palette.mainBlue.withOpacity(0.6),
                     fontWeight: FontWeight.w300,
                   ),
                 ),
@@ -65,7 +65,7 @@ class CheckAccept extends StatelessWidget {
                   text: label2,
                   style: TextStyle(
                     fontSize: 12,
-                    color: Palette.darkGreen,
+                    color: Palette.mainBlue,
                     fontWeight: FontWeight.w500,
                   ),
                   recognizer: TapGestureRecognizer()..onTap = onTap2,

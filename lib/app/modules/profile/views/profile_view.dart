@@ -14,7 +14,7 @@ class ProfileView extends GetView<ProfileController> {
       appBar: AppBar(
         title: const Text(
           'Perfil',
-          style: TextStyle(color: Palette.darkGreen),
+          style: TextStyle(color: Palette.mainBlue),
         ),
         centerTitle: true,
       ),
@@ -56,7 +56,7 @@ class ProfileView extends GetView<ProfileController> {
           style: const TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 20,
-            color: Palette.darkGreen,
+            color: Palette.mainBlue,
           ),
         ),
         const SizedBox(height: 10),
@@ -81,7 +81,7 @@ class ProfileView extends GetView<ProfileController> {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(
-            color: Palette.darkGreen,
+            color: Palette.mainBlue,
             width: 2,
           ),
         ),
@@ -98,7 +98,7 @@ class ProfileView extends GetView<ProfileController> {
               padding: const EdgeInsets.all(20),
               child: Center(
                 child: LoadingAnimationWidget.twistingDots(
-                  leftDotColor: Palette.darkGreen,
+                  leftDotColor: Palette.mainBlue,
                   rightDotColor: Palette.green,
                   size: 20,
                 ),

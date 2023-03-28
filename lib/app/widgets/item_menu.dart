@@ -30,7 +30,7 @@ class ItemMenu extends StatelessWidget {
             ),
             Icon(
               iconData,
-              color: Palette.darkGreen,
+              color: Palette.mainBlue,
             ),
           ],
         ),

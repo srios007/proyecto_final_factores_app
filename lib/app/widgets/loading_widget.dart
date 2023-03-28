@@ -8,7 +8,7 @@ class LoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LoadingAnimationWidget.twistingDots(
-      leftDotColor: Palette.darkGreen,
+      leftDotColor: Palette.mainBlue,
       rightDotColor: Palette.green,
       size: 20,
     );

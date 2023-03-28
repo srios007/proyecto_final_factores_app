@@ -14,7 +14,7 @@ class RegisterView extends GetView<RegisterController> {
         title: const Text(
           'Registro',
           style: TextStyle(
-            color: Palette.darkGreen,
+            color: Palette.mainBlue,
           ),
         ),
       ),
@@ -74,7 +74,7 @@ class RegisterView extends GetView<RegisterController> {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-          color: Palette.darkGreen,
+          color: Palette.mainBlue,
           width: 2,
         ),
       ),
@@ -102,14 +102,14 @@ class RegisterView extends GetView<RegisterController> {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: Palette.darkGreen,
+                  color: Palette.mainBlue,
                   width: 2,
                 ),
               ),
               child: const Icon(
                 Icons.person_rounded,
                 size: 30,
-                color: Palette.darkGreen,
+                color: Palette.mainBlue,
               ),
             ),
           ),
@@ -123,10 +123,10 @@ class RegisterView extends GetView<RegisterController> {
               width: 25,
               height: 25,
               decoration: BoxDecoration(
-                color: Palette.darkGreen,
+                color: Palette.mainBlue,
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: Palette.darkGreen,
+                  color: Palette.mainBlue,
                   width: 1,
                 ),
               ),
@@ -221,7 +221,7 @@ class RegisterView extends GetView<RegisterController> {
             onTap: controller.goToTerms,
             onTap2: controller.goToPolicies,
             color:
-                !controller.terms.value ? Palette.darkGreen : Palette.darkGreen,
+                !controller.terms.value ? Palette.mainBlue : Palette.mainBlue,
           ),
         ),
       ],

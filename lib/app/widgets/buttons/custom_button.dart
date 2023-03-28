@@ -44,7 +44,7 @@ class CustomButton extends StatelessWidget {
         width: width ?? Get.width - 60,
         height: height ?? 55,
         child: MaterialButton(
-          color: color ?? Palette.darkGreen,
+          color: color ?? Palette.mainBlue,
           elevation: elevation ?? 1,
           shape: RoundedRectangleBorder(
             side: BorderSide(color: borderColor ?? Colors.transparent),

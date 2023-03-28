@@ -118,7 +118,7 @@ class HomeView extends GetView<HomeController> {
                     padding: const EdgeInsets.all(20),
                     child: Center(
                       child: LoadingAnimationWidget.twistingDots(
-                        leftDotColor: Palette.darkGreen,
+                        leftDotColor: Palette.mainBlue,
                         rightDotColor: Palette.green,
                         size: 20,
                       ),

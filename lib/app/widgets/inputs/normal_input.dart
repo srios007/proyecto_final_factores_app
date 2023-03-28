@@ -48,7 +48,7 @@ class NormalInput extends StatelessWidget {
           Text(
             titleText,
             style: const TextStyle(
-              color: Palette.darkGreen,
+              color: Palette.mainBlue,
               fontSize: 16,
               fontWeight: FontWeight.w600,
             ),

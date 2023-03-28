@@ -9,14 +9,14 @@ import 'package:proyecto_final_factores_app/app/widgets/widgets.dart';
 class AddCreditCardView extends GetView<AddCreditCardController> {
   AddCreditCardView({super.key});
   final errorStyle = const TextStyle(height: 0, fontSize: 0);
-  final labelStyle = TextStyle(color: Palette.darkGreen.withOpacity(0.7));
+  final labelStyle = TextStyle(color: Palette.mainBlue.withOpacity(0.7));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           'Agregar tarjeta',
-          style: TextStyle(color: Palette.darkGreen),
+          style: TextStyle(color: Palette.mainBlue),
         ),
         centerTitle: true,
       ),
@@ -42,7 +42,7 @@ class AddCreditCardView extends GetView<AddCreditCardController> {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: CreditCardForm(
-          themeColor: Palette.darkGreen,
+          themeColor: Palette.mainBlue,
           formKey: controller.key,
           obscureNumber: false,
           obscureCvv: true,
