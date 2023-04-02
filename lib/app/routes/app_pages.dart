@@ -1,19 +1,21 @@
 import 'package:get/get.dart';
 
-import 'package:proyecto_final_factores_app/app/modules/add_credit_card/bindings/add_credit_card_binding.dart';
-import 'package:proyecto_final_factores_app/app/modules/add_credit_card/views/add_credit_card_view.dart';
-import 'package:proyecto_final_factores_app/app/modules/credit_cards_list/bindings/credit_cards_list_binding.dart';
-import 'package:proyecto_final_factores_app/app/modules/credit_cards_list/views/credit_cards_list_view.dart';
-import 'package:proyecto_final_factores_app/app/modules/home/bindings/home_binding.dart';
-import 'package:proyecto_final_factores_app/app/modules/home/views/home_view.dart';
-import 'package:proyecto_final_factores_app/app/modules/login/bindings/login_binding.dart';
-import 'package:proyecto_final_factores_app/app/modules/login/views/login_view.dart';
-import 'package:proyecto_final_factores_app/app/modules/product_detail/bindings/product_detail_binding.dart';
-import 'package:proyecto_final_factores_app/app/modules/product_detail/views/product_detail_view.dart';
-import 'package:proyecto_final_factores_app/app/modules/profile/bindings/profile_binding.dart';
-import 'package:proyecto_final_factores_app/app/modules/profile/views/profile_view.dart';
-import 'package:proyecto_final_factores_app/app/modules/register/bindings/register_binding.dart';
-import 'package:proyecto_final_factores_app/app/modules/register/views/register_view.dart';
+import '../modules/add_credit_card/bindings/add_credit_card_binding.dart';
+import '../modules/add_credit_card/views/add_credit_card_view.dart';
+import '../modules/credit_cards_list/bindings/credit_cards_list_binding.dart';
+import '../modules/credit_cards_list/views/credit_cards_list_view.dart';
+import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/views/home_view.dart';
+import '../modules/login/bindings/login_binding.dart';
+import '../modules/login/views/login_view.dart';
+import '../modules/product_detail/bindings/product_detail_binding.dart';
+import '../modules/product_detail/views/product_detail_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/views/profile_view.dart';
+import '../modules/recover_password/bindings/recover_password_binding.dart';
+import '../modules/recover_password/views/recover_password_view.dart';
+import '../modules/register/bindings/register_binding.dart';
+import '../modules/register/views/register_view.dart';
 
 part 'app_routes.dart';
 
@@ -64,6 +66,11 @@ class AppPages {
       page: () => const ProductDetailView(),
       binding: ProductDetailBinding(),
       transition: Transition.native,
+    ),
+    GetPage(
+      name: _Paths.RECOVER_PASSWORD,
+      page: () => const RecoverPasswordView(),
+      binding: RecoverPasswordBinding(),
     ),
   ];
 }
