@@ -6,7 +6,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:proyecto_final_factores_app/app/models/user_model.dart';
 import 'package:proyecto_final_factores_app/app/routes/app_pages.dart';
-import 'package:proyecto_final_factores_app/app/services/model_services/user_service.dart';
 import 'package:proyecto_final_factores_app/app/services/services.dart';
 import 'package:proyecto_final_factores_app/app/widgets/widgets.dart';
 
@@ -93,6 +92,7 @@ class RegisterController extends GetxController {
     user.enail = emailController.text;
     user.enail = emailController.text;
     user.profilePictureUrl = pPicture;
+    user.role = ['client'];
   }
 
   /// Registrar en firebase auth
