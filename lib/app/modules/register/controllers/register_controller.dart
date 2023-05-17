@@ -58,8 +58,8 @@ class RegisterController extends GetxController {
       isLoadingPP.value = true;
       try {
         final result = await _picker.pickImage(
-            source: isCamera ? ImageSource.camera : ImageSource.gallery);
-
+          source: isCamera ? ImageSource.camera : ImageSource.gallery,
+        );
         if (result != null) {
           profilePicture = null;
           profilePicture = File(result.path);

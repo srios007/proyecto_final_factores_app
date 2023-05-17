@@ -25,7 +25,7 @@ class HomeView extends GetView<HomeController> {
       ),
       drawer: DrawerHome(controller: controller),
       body: SafeArea(
-        bottom: true,
+        bottom: false,
         child: CustomScrollView(
           slivers: [
             titleSection(),
@@ -63,7 +63,7 @@ class HomeView extends GetView<HomeController> {
 
   productsGrid() {
     return SliverPadding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.fromLTRB(20, 10, 20, 40),
       sliver: SliverGrid(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,

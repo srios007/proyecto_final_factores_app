@@ -33,8 +33,15 @@ class LoginController extends GetxController {
         final response = await auth.signIn(
             email: emailController.text.trim(), password: passController.text);
         if (response is! String) {
+          final result = await userService.validateLogin();
+          if (result) {
+            Get.offAllNamed(Routes.HOME);
+          } else {
+            CustomSnackBars.showErrorSnackBar(
+              'No tienes acceso a esta plataforma',
+            );
+          }
           isLoading.value = false;
-          Get.offAllNamed(Routes.HOME);
         } else {
           CustomSnackBars.showErrorSnackBar(response);
           isLoading.value = false;

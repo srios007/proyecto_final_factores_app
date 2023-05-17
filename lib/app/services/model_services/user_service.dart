@@ -100,6 +100,17 @@ class UserService {
       querySnapshot.data() as Map<String, dynamic>,
     );
   }
+
+  Future<bool> validateLogin() async {
+    User user = User();
+    user = (await getCurrentUser())!;
+    if (user.role!.contains('client')) {
+      return true;
+    } else {
+      await auth.signOut();
+      return false;
+    }
+  }
 }
 
 UserService userService = UserService();
