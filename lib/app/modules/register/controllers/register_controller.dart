@@ -153,7 +153,11 @@ class RegisterController extends GetxController {
 
   /// Registra al usuario
   register() async {
-    if (!terms.value) {
+    if (profilePicture == null) {
+      CustomSnackBars.showErrorSnackBar(
+        'Por favor, escoge una foto de perfil',
+      );
+    } else if (!terms.value) {
       CustomSnackBars.showErrorSnackBar(
         'Por favor, acepta los términos y condiciones y políticas de privacidad',
       );
