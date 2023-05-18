@@ -35,7 +35,7 @@ class Database {
 
   /// Obtiene un documento dentro de una coleccion mediante un campo específico
   Future<QuerySnapshot> getDataByCustonParam(
-    String documentId,
+    dynamic documentId,
     String collection,
     String param,
   ) {

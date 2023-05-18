@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:proyecto_final_factores_app/app/modules/home/controllers/home_controller.dart';
 import 'package:proyecto_final_factores_app/app/utils/utils.dart';
 import 'package:proyecto_final_factores_app/app/widgets/widgets.dart';
@@ -39,6 +38,16 @@ class DrawerHome extends StatelessWidget {
                 )
               ],
             ),
+          ),
+          ItemMenu(
+            iconData: Icons.shopping_bag_outlined,
+            text: 'Productos',
+            onTap: controller.goToProducts,
+          ),
+          ItemMenu(
+            iconData: Icons.shop_outlined,
+            text: 'Tiendas',
+            onTap: controller.goToShops,
           ),
           ItemMenu(
             iconData: Icons.person_2_outlined,

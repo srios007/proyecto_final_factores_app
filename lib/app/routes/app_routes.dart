@@ -11,6 +11,7 @@ abstract class Routes {
   static const ADD_CREDIT_CARD = _Paths.ADD_CREDIT_CARD;
   static const PRODUCT_DETAIL = _Paths.PRODUCT_DETAIL;
   static const RECOVER_PASSWORD = _Paths.RECOVER_PASSWORD;
+  static const SHOPS = _Paths.SHOPS;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const ADD_CREDIT_CARD = '/add-credit-card';
   static const PRODUCT_DETAIL = '/product-detail';
   static const RECOVER_PASSWORD = '/recover-password';
+  static const SHOPS = '/shops';
 }

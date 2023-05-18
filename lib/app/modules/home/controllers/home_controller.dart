@@ -40,6 +40,18 @@ class HomeController extends GetxController {
     Get.toNamed(Routes.CREDIT_CARDS_LIST, arguments: {'id': user.id});
   }
 
+  /// Va a la pantalla de tiendas
+  goToShops() {
+    Get.back();
+    Get.toNamed(Routes.SHOPS);
+  }
+
+  /// Va a la pantalla de tiendas
+  goToProducts() {
+    Get.back();
+    Get.toNamed(Routes.HOME);
+  }
+
   /// Va a la pantalla de detalle del producto
   goToProductDetail(Product product) {
     Get.toNamed(Routes.PRODUCT_DETAIL, arguments: {

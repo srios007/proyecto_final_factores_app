@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
 
 import 'package:proyecto_final_factores_app/app/models/user_model.dart';
 import 'package:proyecto_final_factores_app/app/services/services.dart';
@@ -110,6 +111,23 @@ class UserService {
       await auth.signOut();
       return false;
     }
+  }
+
+  getShops() async {
+    RxList shops = [].obs;
+    final querySnapshot = await database.getDataByCustonParam(
+      ['shop'],
+      usersReference,
+      'role',
+    );
+    if (querySnapshot.docs.isEmpty) return [];
+
+    for (final shop in querySnapshot.docs) {
+      shops.add(User.fromJson(
+        shop.data() as Map<String, dynamic>,
+      ));
+    }
+    return shops;
   }
 }
 
