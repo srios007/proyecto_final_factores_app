@@ -26,6 +26,24 @@ class ProductsService {
     }
     return products;
   }
+
+  Future<RxList> getProductsByShop(String shopId) async {
+    RxList products = [].obs;
+    final querySnapshot = await database.getDataByCustonParam(
+      shopId,
+      productsReference,
+      'shopId',
+    );
+
+    if (querySnapshot.docs.isEmpty) return [].obs;
+    // print('si hay');
+    for (final product in querySnapshot.docs) {
+      products.add(Product.fromJson(
+        product.data() as Map<String, dynamic>,
+      ));
+    }
+    return products;
+  }
 }
 
 ProductsService productsService = ProductsService();

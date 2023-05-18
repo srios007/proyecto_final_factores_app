@@ -4,13 +4,12 @@ import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:proyecto_final_factores_app/app/models/models.dart';
 import 'package:proyecto_final_factores_app/app/modules/home/widgets/drawer_home.dart';
-import 'package:proyecto_final_factores_app/app/modules/shops/controllers/shops_controller.dart';
-import 'package:proyecto_final_factores_app/app/routes/app_pages.dart';
+import 'package:proyecto_final_factores_app/app/modules/shopDetail/controllers/shop_detail_controller.dart';
 import 'package:proyecto_final_factores_app/app/utils/utils.dart';
 import 'package:proyecto_final_factores_app/app/widgets/widgets.dart';
 
-class ShopsView extends GetView<ShopsController> {
-  const ShopsView({super.key});
+class ShopDetailView extends GetView<ShopDetailController> {
+  const ShopDetailView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,12 +36,12 @@ class ShopsView extends GetView<ShopsController> {
   }
 
   titleSection() {
-    return const SliverToBoxAdapter(
+    return SliverToBoxAdapter(
       child: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Text(
-          'Tiendas',
-          style: TextStyle(
+          'Productos de ${controller.shop.name}',
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 24,
           ),
@@ -55,7 +54,7 @@ class ShopsView extends GetView<ShopsController> {
     return Obx(
       () => controller.isLoading.value
           ? loadingWidget()
-          : controller.shops.isEmpty
+          : controller.products.isEmpty
               ? noResults()
               : productsGrid(),
     );
@@ -67,25 +66,25 @@ class ShopsView extends GetView<ShopsController> {
       sliver: SliverGrid(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 0.8,
+          childAspectRatio: 0.7,
           crossAxisSpacing: 20,
           mainAxisSpacing: 20,
         ),
         delegate: SliverChildBuilderDelegate(
-          childCount: controller.shops.length,
+          childCount: controller.products.length,
           (BuildContext context, int index) {
-            final product = controller.shops[index];
-            return shopsItem(product);
+            final product = controller.products[index];
+            return productItem(product);
           },
         ),
       ),
     );
   }
 
-  shopsItem(User user) {
+  productItem(Product product) {
     return GestureDetector(
       onTap: () {
-        Get.toNamed(Routes.SHOP_DETAIL, arguments: {'user': user});
+        controller.goToProductDetail(product);
       },
       child: Container(
         decoration: BoxDecoration(
@@ -103,16 +102,16 @@ class ShopsView extends GetView<ShopsController> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: CachedNetworkImage(
                   filterQuality: FilterQuality.none,
-                  imageUrl: user.profilePictureUrl!,
+                  imageUrl: product.imageUrl!,
                   width: Get.width,
                   height: 150,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                   progressIndicatorBuilder: (context, url, downloadProgress) =>
                       Padding(
                     padding: const EdgeInsets.all(20),
@@ -129,12 +128,13 @@ class ShopsView extends GetView<ShopsController> {
               ),
               const Spacer(flex: 2),
               Text(
-                'Tienda ${user.name!}',
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
+                product.name!,
+                textAlign: TextAlign.start,
+              ),
+              const Spacer(),
+              Text(
+                constants.numberFormat.format(product.price),
+                textAlign: TextAlign.start,
               ),
               const Spacer(),
             ],
