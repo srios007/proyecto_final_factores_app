@@ -6,6 +6,7 @@ import 'package:proyecto_final_factores_app/app/services/services.dart';
 class HomeController extends GetxController {
   RxBool isLoading = false.obs;
   RxList products = [].obs;
+  RxList shoppingCart = [].obs;
   late User user;
 
   @override
@@ -58,5 +59,10 @@ class HomeController extends GetxController {
       'product': product,
       'id': user.id,
     });
+  }
+
+  /// Va al carrito de compras
+  goToCart() {
+    Get.toNamed(Routes.SHOPPING_CART);
   }
 }

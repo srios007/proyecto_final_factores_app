@@ -21,6 +21,15 @@ class HomeView extends GetView<HomeController> {
                 style: const TextStyle(color: Palette.black, fontSize: 16),
               )),
         centerTitle: true,
+        actions: [
+          GestureDetector(
+            onTap: controller.goToCart,
+            child: const Padding(
+              padding: EdgeInsets.only(right: 10),
+              child: Icon(Icons.shopping_cart),
+            ),
+          )
+        ],
       ),
       drawer: DrawerHome(controller: controller),
       body: SafeArea(

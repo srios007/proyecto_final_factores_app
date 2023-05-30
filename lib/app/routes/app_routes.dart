@@ -13,6 +13,7 @@ abstract class Routes {
   static const RECOVER_PASSWORD = _Paths.RECOVER_PASSWORD;
   static const SHOPS = _Paths.SHOPS;
   static const SHOP_DETAIL = _Paths.SHOP_DETAIL;
+  static const SHOPPING_CART = _Paths.SHOPPING_CART;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const RECOVER_PASSWORD = '/recover-password';
   static const SHOPS = '/shops';
   static const SHOP_DETAIL = '/shop-detail';
+  static const SHOPPING_CART = '/shopping-cart';
 }
