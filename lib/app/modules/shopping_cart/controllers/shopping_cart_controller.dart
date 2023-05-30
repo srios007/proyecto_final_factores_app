@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:proyecto_final_factores_app/app/models/models.dart';
+import 'package:proyecto_final_factores_app/app/models/purchase_model.dart';
 import 'package:proyecto_final_factores_app/app/modules/home/controllers/home_controller.dart';
 import 'package:proyecto_final_factores_app/app/routes/app_pages.dart';
 import 'package:proyecto_final_factores_app/app/services/services.dart';
@@ -60,6 +61,35 @@ class ShoppingCartController extends GetxController {
 
   pay() {
     if (card != null) {
-    } else {}
+      print(1);
+      isLoading.value = true;
+      homeController.shoppingCart.forEach((element) async {
+        Purchase purchase = Purchase();
+        purchase.created = DateTime.now();
+        purchase.productId = element.product.id;
+        purchase.state = 'En preparación';
+        // En preparación
+        // En camino
+        // Entregado
+        // Finalizado
+        purchase.stock = element.stock.value;
+        purchase.clientId = homeController.user.id;
+        element.product.stock = element.product.stock - element.stock.value;
+        await productsService.updateProduct(
+          productId: element.product.id,
+          data: element.product,
+        );
+        await purchasesService.addPurchase(purchase: purchase);
+      });
+      isLoading.value = false;
+      CustomSnackBars.showSuccessSnackBar(
+        'Compra completada con éxito',
+      );
+      Get.offAllNamed(Routes.HOME);
+    } else {
+      CustomSnackBars.showErrorSnackBar(
+        'Por favor, escoge un medio de pago',
+      );
+    }
   }
 }

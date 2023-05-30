@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:proyecto_final_factores_app/app/models/credit_card_model.dart';
 import 'package:proyecto_final_factores_app/app/modules/product_detail/controllers/product_detail_controller.dart';
 import 'package:proyecto_final_factores_app/app/utils/utils.dart';
 import 'package:proyecto_final_factores_app/app/widgets/widgets.dart';
@@ -25,7 +24,7 @@ class ProductDetailView extends GetView<ProductDetailController> {
       floatingActionButton: CustomButton(
         buttonText: 'Agregar al carrito',
         isLoading: false.obs,
-        onPressed: controller.pay,
+        onPressed: controller.addToCart,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
@@ -44,19 +43,11 @@ class ProductDetailView extends GetView<ProductDetailController> {
                 ),
               ),
             ),
-            // Obx(
-            //   () => controller.isLoading.value
-            //       ? loadingWidget()
-            //       : controller.cards.isEmpty
-            //           ? addPaymenthMethodButton()
-            //           : creditCardList(),
-            // ),
           ],
         ),
       ),
     );
   }
-
 
   loadingWidget() {
     return const SliverToBoxAdapter(
@@ -103,6 +94,23 @@ class ProductDetailView extends GetView<ProductDetailController> {
             fontSize: 16,
           ),
         ),
+        const SizedBox(height: 20),
+        const Text(
+          'Stock disponible',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Palette.mainBlue,
+          ),
+        ),
+        const SizedBox(height: 20),
+        Text(
+          '${controller.product.stock}',
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+        ),
       ],
     );
   }
@@ -127,5 +135,4 @@ class ProductDetailView extends GetView<ProductDetailController> {
       errorWidget: (context, url, error) => const Icon(Icons.error),
     );
   }
-
 }

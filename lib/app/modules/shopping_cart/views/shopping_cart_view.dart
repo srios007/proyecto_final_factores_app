@@ -20,7 +20,7 @@ class ShoppingCartView extends GetView<ShoppingCartController> {
       ),
       floatingActionButton: CustomButton(
         buttonText: 'Pagar',
-        isLoading: false.obs,
+        isLoading: controller.isLoading,
         onPressed: controller.pay,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
@@ -30,9 +30,9 @@ class ShoppingCartView extends GetView<ShoppingCartController> {
           slivers: [
             const SliverToBoxAdapter(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.fromLTRB(20, 0, 30, 20),
                 child: Text(
-                  'Productos',
+                  'Medio de pago',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -50,9 +50,9 @@ class ShoppingCartView extends GetView<ShoppingCartController> {
             ),
             const SliverToBoxAdapter(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.fromLTRB(20, 30, 30, 20),
                 child: Text(
-                  'Medio de pago',
+                  'Productos',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -144,42 +144,38 @@ class ShoppingCartView extends GetView<ShoppingCartController> {
           onTap: () {
             controller.selectCard(child);
           },
-          child: Padding(
-            padding: EdgeInsets.only(
-                bottom: controller.cards.length == position + 1 ? 90 : 0),
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white,
-                border: Border.all(
-                  color: child.isSelected!.value
-                      ? Palette.mainBlue
-                      : Colors.transparent,
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: const EdgeInsets.all(15),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.white,
+              border: Border.all(
+                color: child.isSelected!.value
+                    ? Palette.mainBlue
+                    : Colors.transparent,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 1,
+                  blurRadius: 5,
+                  offset: const Offset(0, 3), // changes position of shadow
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 1,
-                    blurRadius: 5,
-                    offset: const Offset(0, 3), // changes position of shadow
-                  ),
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text('Tarjeta', style: titleStyle),
-                  const SizedBox(height: 10),
-                  Text(
-                    '************${child.cardNumber!.substring(
-                      child.cardNumber!.length - 4,
-                      child.cardNumber!.length,
-                    )}',
-                  ),
-                ],
-              ),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('Tarjeta', style: titleStyle),
+                const SizedBox(height: 10),
+                Text(
+                  '************${child.cardNumber!.substring(
+                    child.cardNumber!.length - 4,
+                    child.cardNumber!.length,
+                  )}',
+                ),
+              ],
             ),
           ),
         ));
@@ -188,7 +184,7 @@ class ShoppingCartView extends GetView<ShoppingCartController> {
   cartItemWidget(ShoppingCartModel cart, int position) {
     return Obx(
       () => Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20),
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         padding: const EdgeInsets.symmetric(horizontal: 20),
         height: 150,
         width: Get.width,

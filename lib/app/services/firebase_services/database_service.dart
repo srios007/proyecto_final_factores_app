@@ -1032,7 +1032,8 @@ class Database {
       }
     });
   }
-    /// Guarda un documento dentro de una subcoleccion dado un ID
+
+  /// Guarda un documento dentro de una subcoleccion dado un ID
   Future<bool> saveDocumentInSubcollection({
     required String documentId,
     required String collection,
@@ -1047,6 +1048,23 @@ class Database {
           .add(subcollectionData);
       subcollectionData['id'] = reference.id;
       await reference.update(subcollectionData);
+      return true;
+    } on Exception catch (e) {
+      print(e);
+      return false;
+    }
+  }
+
+  /// Guarda un documento dentro de una subcoleccion dado un ID
+  Future<bool> saveDocumentInCollection({
+    required String collection,
+    required Map<String, dynamic> collectionData,
+  }) async {
+    try {
+      final reference =
+          await firestore.collection(collection).add(collectionData);
+      collectionData['id'] = reference.id;
+      await reference.update(collectionData);
       return true;
     } on Exception catch (e) {
       print(e);

@@ -4,6 +4,7 @@ import 'package:proyecto_final_factores_app/app/models/product_model.dart';
 
 import 'package:proyecto_final_factores_app/app/services/services.dart';
 import 'package:proyecto_final_factores_app/app/utils/utils.dart';
+import 'package:proyecto_final_factores_app/app/widgets/widgets.dart';
 
 class ProductsService {
   factory ProductsService() {
@@ -43,6 +44,25 @@ class ProductsService {
       ));
     }
     return products;
+  }
+
+  updateProduct({
+    required String productId,
+    required Product data,
+  }) async {
+    try {
+      await database.updateDocument(
+        productId,
+        data.toJson(),
+        productsReference,
+      );
+    } on Exception catch (e) {
+      CustomSnackBars.showErrorSnackBar(
+        'Hubo un error al actualizar el producto',
+      );
+      print(e);
+      return false;
+    }
   }
 }
 
