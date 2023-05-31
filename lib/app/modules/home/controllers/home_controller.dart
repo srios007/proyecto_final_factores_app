@@ -53,6 +53,12 @@ class HomeController extends GetxController {
     Get.toNamed(Routes.HOME);
   }
 
+  /// Va a la pantalla de mis compras
+  goToShopping() {
+    Get.back();
+    Get.toNamed(Routes.MY_SHOPPING);
+  }
+
   /// Va a la pantalla de detalle del producto
   goToProductDetail(Product product) {
     Get.toNamed(Routes.PRODUCT_DETAIL, arguments: {

@@ -50,6 +50,11 @@ class DrawerHome extends StatelessWidget {
             onTap: controller.goToShops,
           ),
           ItemMenu(
+            iconData: Icons.shopping_cart_checkout_sharp,
+            text: 'Mis compras',
+            onTap: controller.goToShopping,
+          ),
+          ItemMenu(
             iconData: Icons.person_2_outlined,
             text: 'Perfil',
             onTap: controller.goToProfile,

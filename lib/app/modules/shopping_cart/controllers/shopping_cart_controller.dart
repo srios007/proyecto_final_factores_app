@@ -73,6 +73,8 @@ class ShoppingCartController extends GetxController {
         // Entregado
         // Finalizado
         purchase.stock = element.stock.value;
+        purchase.productName = element.product.name;
+        purchase.productUrl = element.product.imageUrl;
         purchase.clientId = homeController.user.id;
         element.product.stock = element.product.stock - element.stock.value;
         await productsService.updateProduct(

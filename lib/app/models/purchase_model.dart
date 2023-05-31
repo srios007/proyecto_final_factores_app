@@ -5,6 +5,8 @@ class Purchase {
   String? id;
   String? state;
   String? clientId;
+  String? productName;
+  String? productUrl;
 
   Purchase({
     this.created,
@@ -13,15 +15,23 @@ class Purchase {
     this.id,
     this.state,
     this.clientId,
+    this.productName,
+    this.productUrl,
   });
 
-  Purchase.fromJson(Map<String, dynamic> json) {
-    created = json['created'];
+  Purchase.fromJson(Map<String, dynamic> json, {bool isGet = false}) {
+    if (isGet) {
+      created = json['created'].toDate();
+    } else {
+      created = json['created'];
+    }
     stock = json['stock'];
     productId = json['productId'];
     id = json['id'];
     state = json['state'];
     clientId = json['clientId'];
+    productName = json['productName'];
+    productUrl = json['productUrl'];
   }
 
   Map<String, dynamic> toJson() {
@@ -32,6 +42,8 @@ class Purchase {
     data['id'] = id;
     data['state'] = state;
     data['clientId'] = clientId;
+    data['productName'] = productName;
+    data['productUrl'] = productUrl;
     return data;
   }
 }

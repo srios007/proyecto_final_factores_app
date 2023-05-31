@@ -28,22 +28,23 @@ class PurchasesService {
   //   return products;
   // }
 
-  Future<RxList> getProductsByShop(String shopId) async {
-    RxList products = [].obs;
+  Future<RxList> getPurchasesByUserId(String clientId) async {
+    RxList purchases = [].obs;
     final querySnapshot = await database.getDataByCustonParam(
-      shopId,
+      clientId,
       purchaseReference,
-      'shopId',
+      'clientId',
     );
 
     if (querySnapshot.docs.isEmpty) return [].obs;
     // print('si hay');
-    for (final product in querySnapshot.docs) {
-      products.add(Product.fromJson(
-        product.data() as Map<String, dynamic>,
+    for (final purchase in querySnapshot.docs) {
+      purchases.add(Purchase.fromJson(
+        purchase.data() as Map<String, dynamic>,
+        isGet: true,
       ));
     }
-    return products;
+    return purchases;
   }
 
   Future<bool> addPurchase({
