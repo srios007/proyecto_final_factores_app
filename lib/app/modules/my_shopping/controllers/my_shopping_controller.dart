@@ -19,9 +19,31 @@ class MyShoppingController extends GetxController {
   getData() async {
     isLoading.value = true;
     user = homeController.user;
-    purchases = await purchasesService.getPurchasesByUserId(user.id!);
+    await getPurchases();
     print(purchases.length);
 
     isLoading.value = false;
+  }
+
+  /// Trae los purchases del usuario
+  getPurchases() async {
+    database
+        .getCollectionSnapshotQuery('purchases', 'clientId', user.id!)
+        .listen((event) async {
+      if (event.docs.isNotEmpty) {
+        isLoading.value = true;
+
+        purchases = [].obs;
+        for (final purchase in event.docs) {
+          purchases.add(
+            Purchase.fromJson(
+              purchase.data() as Map<String, dynamic>,
+              isGet: true,
+            ),
+          );
+        }
+        isLoading.value = false;
+      }
+    });
   }
 }
