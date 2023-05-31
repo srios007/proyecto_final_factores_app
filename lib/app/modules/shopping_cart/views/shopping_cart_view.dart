@@ -228,7 +228,7 @@ class ShoppingCartView extends GetView<ShoppingCartController> {
                   errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
-              const SizedBox(width: 20),
+              const SizedBox(width: 10),
               SizedBox(
                 width: Get.width * 0.45,
                 child: Column(
@@ -266,6 +266,14 @@ class ShoppingCartView extends GetView<ShoppingCartController> {
                       ],
                     ),
                   ],
+                ),
+              ),
+              const Spacer(),
+              GestureDetector(
+                onTap: () => controller.deleteItem(position),
+                child: const Icon(
+                  Icons.delete,
+                  color: Palette.red,
                 ),
               ),
               const Spacer(),

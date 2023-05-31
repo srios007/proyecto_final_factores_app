@@ -7,6 +7,7 @@ class Purchase {
   String? clientId;
   String? productName;
   String? productUrl;
+  String? shopId;
 
   Purchase({
     this.created,
@@ -17,6 +18,7 @@ class Purchase {
     this.clientId,
     this.productName,
     this.productUrl,
+    this.shopId,
   });
 
   Purchase.fromJson(Map<String, dynamic> json, {bool isGet = false}) {
@@ -32,6 +34,7 @@ class Purchase {
     clientId = json['clientId'];
     productName = json['productName'];
     productUrl = json['productUrl'];
+    shopId = json['shopId'];
   }
 
   Map<String, dynamic> toJson() {
@@ -44,6 +47,7 @@ class Purchase {
     data['clientId'] = clientId;
     data['productName'] = productName;
     data['productUrl'] = productUrl;
+    data['shopId'] = shopId;
     return data;
   }
 }

@@ -59,6 +59,11 @@ class ShoppingCartController extends GetxController {
     }
   }
 
+  ///Elimina un elemento del carrito
+  deleteItem(int position) {
+    homeController.shoppingCart.removeAt(position);
+  }
+
   pay() {
     if (card != null) {
       print(1);
@@ -75,6 +80,7 @@ class ShoppingCartController extends GetxController {
         purchase.stock = element.stock.value;
         purchase.productName = element.product.name;
         purchase.productUrl = element.product.imageUrl;
+        purchase.shopId = element.product.shopId;
         purchase.clientId = homeController.user.id;
         element.product.stock = element.product.stock - element.stock.value;
         await productsService.updateProduct(
