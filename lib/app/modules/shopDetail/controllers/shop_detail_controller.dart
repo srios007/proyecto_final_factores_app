@@ -21,7 +21,6 @@ class ShopDetailController extends GetxController {
     isLoading.value = true;
     user = homeController.user;
     products = await productsService.getProductsByShop(shop.id!);
-    print(products.length);
     isLoading.value = false;
   }
 

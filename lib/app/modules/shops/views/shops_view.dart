@@ -74,8 +74,8 @@ class ShopsView extends GetView<ShopsController> {
         delegate: SliverChildBuilderDelegate(
           childCount: controller.shops.length,
           (BuildContext context, int index) {
-            final product = controller.shops[index];
-            return shopsItem(product);
+            final shop = controller.shops[index];
+            return shopsItem(shop);
           },
         ),
       ),
